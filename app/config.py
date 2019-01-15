@@ -10,7 +10,7 @@ DEBUG  = True
 PORT = 5000
 
 
-export S3_BUCKET=" baket nameE"
+export S3_BUCKET="bucket name"
 export S3_KEY="aws key"
-export S3_SECRET_ACCESS_KEY="tanja"
+export S3_SECRET_ACCESS_KEY="secret"
 
