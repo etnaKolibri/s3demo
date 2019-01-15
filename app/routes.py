@@ -11,7 +11,7 @@ def upload_file():
         return "No user_file key in request.files"
 
 	# B
-    file    = request.files["user_file"]
+    file = request.files["user_file"]
 
     """
         These attributes are also available
@@ -30,7 +30,7 @@ def upload_file():
 	# D.
     if file and allowed_file(file.filename):
         file.filename = secure_filename(file.filename)
-        output   	  = upload_file_to_s3(file, app.config["S3_BUCKET"])
+        output = upload_file_to_s3(file, app.config["S3_BUCKET"])
         return str(output)
 
     else:

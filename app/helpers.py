@@ -11,7 +11,7 @@ s3 = boto3.client(
 
 """
 
-    pusti mi fajlic bby
+    Upload file
 
 """
 def upload_file_to_s3(file, bucket_name, acl="publick-read"):
@@ -28,8 +28,7 @@ def upload_file_to_s3(file, bucket_name, acl="publick-read"):
         )
     
     except Exception as e:
-        #smisli nesto pametnije 
-        print("sta se desilo?: ", e)
+        print("S3 Upload Failed: ", e)
         return e
 
 
