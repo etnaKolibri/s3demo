@@ -14,16 +14,16 @@ s3 = boto3.client(
     Upload file
 
 """
-def upload_file_to_s3(file, bucket_name, acl="publick-read"):
+def upload_file_to_s3(file_to_upload, bucket_name, acl="publick-read"):
     try:
 
         s3.upload_fileobj(
-            file,
+            file_to_upload,
             bucket_name,
             file.filename,
             ExtraArgs={
                 "ACL": acl,
-                "ContentType": file.content_type
+                "ContentType": file_to_upload.content_type
             }
         )
     
@@ -32,4 +32,4 @@ def upload_file_to_s3(file, bucket_name, acl="publick-read"):
         return e
 
 
-    return "{}{}".format(app.config["S3_LOCATION"], file.filename)  
+    return "{}{}".format(app.config["S3_LOCATION"], file_to_upload.filename)  
